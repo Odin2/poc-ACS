@@ -1,18 +1,15 @@
 from django.shortcuts import render
 from PIL import Image
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
 from .forms import UploadFileForm
 import io
 import base64
 from funciones.estimador import ran
 # Create your views here.
 
-def index(request):
-    x = ran()
-    return render(request, 'estimator/cover.html', {'guess': x})
 
-
+## Funcion que responde al POST de la pagina de estimar.
+#
+#  x representa el numero de la estimacion y se devuelve la imagen para desplegarse en imgsrc.
 def upload_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)

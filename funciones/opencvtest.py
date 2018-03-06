@@ -1,5 +1,8 @@
 import cv2
 
+## Prueba de OpenCV.
+#
+#  Convierte una imagen a blanco y negro.
 def img2gray():
     # Load an color image in grayscale
     img = cv2.imread('download.jpg',0)
