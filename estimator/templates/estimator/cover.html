@@ -44,11 +44,22 @@
         <div class="col-md-4 mx-auto">
           <h1 class="cover-heading"><b>Upload Your Image</b></h1>
           <p class="lead">The image must be 255x255 in size</p>
-          <a class="btn btn-primary btn-file" href="#">Browse
-            <input type="file"> </a>
+          <!---->
+		<form action="" method="post" enctype="multipart/form-data">
+		   		{% csrf_token %} 
+			
+				{{ form.as_p }}
+			
+			<input class="btn btn btn-primary" type="submit"> Submit</input>
+			
+			
+			
+		</form>
+
+
         </div>
         <div class="col-md-4">
-          <img class="img-fluid d-block" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg"> </div>
+          <img class="img-fluid d-block" id="imagen" src="{{ imgsrc }}"> </div>
         <div class="col-md-4">
           <h1 class="cover-heading"><b>Estimate is:</b></h1>
           <p class="lead text-success">{{ guess }} months</p>
