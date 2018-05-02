@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from PIL import Image
 from .forms import UploadFileForm
+import datetime
 import io
 import base64
 from funciones.estimador import ran
@@ -31,10 +32,18 @@ def upload_file(request):
             base64_encoded_result_str = base64_encoded_result_bytes.decode('ascii')
 
             x = ran()
+            
+
+            
+            with open("Log", "a+") as f:
+                f.write(str(x) + " - " + form.cleaned_data['Patient_Name'] + " - " + form.cleaned_data['Patient_Age'] + " - " + form.cleaned_data['Patient_Sex'] + " - " + str(datetime.datetime.now()).split(".")[0] + "\n" )
+
             imgsrc = "data:image/jpeg;base64," + base64_encoded_result_str  
+            
+            
     else:
         imgsrc = "https://pingendo.com/assets/photos/wireframe/photo-1.jpg"
         form = UploadFileForm()
-        x = ran()
+        x = 0
 
     return render(request, 'estimator/cover.html', {'form': form, 'guess': x, 'imgsrc' : imgsrc})
