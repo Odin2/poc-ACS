@@ -1,5 +1,58 @@
 {
     "files": {
+        "boneage\\cnn.py": {
+            "block_positions": [],
+            "comments": 29,
+            "language": "Python",
+            "mccabe": 0,
+            "ratio_comment_to_code": 0.88,
+            "sloc": 33
+        },
+        "boneage\\cnn_boneage.py": {
+            "block_positions": [
+                {
+                    "end": 136,
+                    "name": "modelBuilding",
+                    "start": 91,
+                    "type": "Function"
+                }
+            ],
+            "comments": 69,
+            "language": "Python",
+            "mccabe": 2,
+            "ratio_comment_to_code": 0.99,
+            "sloc": 70
+        },
+        "boneage\\output_predictions.py": {
+            "block_positions": [
+                {
+                    "end": 202,
+                    "name": "make_predictions",
+                    "start": 21,
+                    "type": "Function"
+                }
+            ],
+            "comments": 17,
+            "language": "Python",
+            "mccabe": 37,
+            "ratio_comment_to_code": 0.1,
+            "sloc": 169
+        },
+        "boneage\\parameters.py": {
+            "block_positions": [
+                {
+                    "end": 106,
+                    "name": "initialize_parameters",
+                    "start": 15,
+                    "type": "Function"
+                }
+            ],
+            "comments": 105,
+            "language": "Python",
+            "mccabe": 0,
+            "ratio_comment_to_code": 1.44,
+            "sloc": 73
+        },
         "estimator\\__init__.py": {
             "block_positions": [],
             "comments": 0,
@@ -9,6 +62,7 @@
             "sloc": 0
         },
         "estimator\\admin.py": {
+            "block_positions": [],
             "comments": 1,
             "language": "Python",
             "mccabe": 0,
@@ -44,6 +98,14 @@
             "mccabe": 0,
             "ratio_comment_to_code": 0.38,
             "sloc": 8
+        },
+        "estimator\\migrations\\__init__.py": {
+            "block_positions": [],
+            "comments": 0,
+            "language": "Python",
+            "mccabe": 0,
+            "ratio_comment_to_code": 0.0,
+            "sloc": 0
         },
         "estimator\\models.py": {
             "block_positions": [],
@@ -174,6 +236,14 @@
             "ratio_comment_to_code": 0.0,
             "sloc": 3
         },
+        "ingresar\\migrations\\__init__.py": {
+            "block_positions": [],
+            "comments": 0,
+            "language": "Python",
+            "mccabe": 0,
+            "ratio_comment_to_code": 0.0,
+            "sloc": 0
+        },
         "ingresar\\models.py": {
             "block_positions": [],
             "comments": 1,
@@ -212,6 +282,14 @@
             "mccabe": 0,
             "ratio_comment_to_code": 0.17,
             "sloc": 6
+        },
+        "manage.py": {
+            "block_positions": [],
+            "comments": 0,
+            "language": "Python",
+            "mccabe": 1,
+            "ratio_comment_to_code": 0.0,
+            "sloc": 13
         },
         "pocACS\\__init__.py": {
             "block_positions": [],
