@@ -15,3 +15,4 @@ def img2gray():
     # Wait a key to kill the process
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+    
