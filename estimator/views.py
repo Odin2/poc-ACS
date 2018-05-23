@@ -35,6 +35,6 @@ def upload_file(request):
     else:
         imgsrc = "https://pingendo.com/assets/photos/wireframe/photo-1.jpg"
         form = UploadFileForm()
-        x = ran()
+        x = 0
 
     return render(request, 'estimator/cover.html', {'form': form, 'guess': x, 'imgsrc' : imgsrc})
