@@ -4,7 +4,8 @@ from .forms import UploadFileForm
 import datetime
 import io
 import base64
-from funciones.estimador import ran
+
+from funciones.estimador import Estimador
 # Create your views here.
 
 
@@ -31,13 +32,25 @@ def upload_file(request):
             base64_encoded_result_bytes = base64.b64encode(img_bytes)
             base64_encoded_result_str = base64_encoded_result_bytes.decode('ascii')
 
-            x = ran()
-
+            imageopened.save(".\\poc-ACS\\boneage\\dataset\\test\\"+ imagen.name.split(".")[0]  + ".png", format = "PNG")
+            #x = ran()
+            estimador = Estimador()
+            if form.cleaned_data['Patient_Sex'] == "Female":
+                valor=estimador.estimar("F")
+            else:
+                valor=estimador.estimar("M")
+            print(valor[0][0])
+            x = valor[0][0]
+            
             with open("Log", "a+") as f:
                 f.write(str(x) + " - " + form.cleaned_data['Patient_Name'] + " - " + form.cleaned_data['Patient_Age'] + " - " + form.cleaned_data['Patient_Sex'] + " - " + str(datetime.datetime.now()).split(".")[0] + "\n")
 
             imgsrc = "data:image/jpeg;base64," + base64_encoded_result_str
-
+            
+            
+            
+                        
+            
     else:
         imgsrc = "https://pingendo.com/assets/photos/wireframe/photo-1.jpg"
         form = UploadFileForm()
