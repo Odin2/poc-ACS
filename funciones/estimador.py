@@ -3,6 +3,8 @@ import numpy
 #
 #  retorna un valor entre 0 y 228 (la edad maxima de pacientes en meses).
 
+import os
+__path__=[os.path.dirname(os.path.abspath(__file__))]
 
 from output_predictions import Predict
 import numpy as np

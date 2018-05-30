@@ -2,3 +2,5 @@ eclipse.preferences.version=1
 encoding//boneage/lib/parse_images.py=utf-8
 encoding//boneage/output_predictions.py=utf-8
 encoding//funciones/csvpy.py=utf-8
+encoding//funciones/lib/parse_images.py=utf-8
+encoding//funciones/output_predictions.py=utf-8
