@@ -31,3 +31,5 @@ def train():
             print(m.id1 + ' ' + m.boneage + ' ' + m.male)  # mostrar objeto
 
     csvarchivo.close()
+
+train()

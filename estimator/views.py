@@ -24,6 +24,7 @@ def upload_file(request):
             imageopened = Image.open(io.BytesIO(imagebytes))
 
             in_mem_file = io.BytesIO()
+            
             imageopened.save(in_mem_file, format = "PNG")
             # reset file pointer to start
             in_mem_file.seek(0)
@@ -34,6 +35,8 @@ def upload_file(request):
 
             imageopened.save(".\\poc-ACS\\boneage\\dataset\\test\\"+ imagen.name.split(".")[0]  + ".png", format = "PNG")
             #x = ran()
+            imageopened.close()
+            
             estimador = Estimador()
             if form.cleaned_data['Patient_Sex'] == "Female":
                 valor=estimador.estimar("F")
