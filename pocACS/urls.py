@@ -20,6 +20,8 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ingresar.urls')),
-    path('estimate', include('estimator.urls'))
+    path('estimate', include('estimator.urls')
+         ),
+    path('validate', include('validate.urls'))   
 
 ]
