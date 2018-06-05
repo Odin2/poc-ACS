@@ -15,9 +15,9 @@ from keras.layers import GlobalAveragePooling1D, GlobalAveragePooling2D, Dense, 
 from keras.models import Model, Sequential
 from keras.optimizers import SGD, RMSprop, Adagrad, Adadelta, Adam
 from keras.losses import mean_absolute_error, mean_squared_error
-from lib.parse_images import read_images, train_test_ids, unpickle
-from lib.tools import Tools
-from parameters import initialize_parameters
+from .libr.parse_images import read_images, train_test_ids, unpickle
+from .libr.tools import Tools
+from .parameters import initialize_parameters
 
 
 class Predict:

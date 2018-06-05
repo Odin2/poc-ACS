@@ -33,7 +33,7 @@ def upload_file(request):
             base64_encoded_result_bytes = base64.b64encode(img_bytes)
             base64_encoded_result_str = base64_encoded_result_bytes.decode('ascii')
 
-            imageopened.save(".\\poc-ACS\\boneage\\dataset\\test\\"+ imagen.name.split(".")[0]  + ".png", format = "PNG")
+            imageopened.save("E:\\eclipse-workspace\\pocACS\\funciones\\dataset\\test\\"+ imagen.name.split(".")[0]  + ".png", format = "PNG")
             #x = ran()
             imageopened.close()
             
