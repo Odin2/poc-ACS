@@ -4,7 +4,7 @@ from funciones.csvpy import datoscsv
 from funciones.estimador import Estimador
 import unittest
 import csv
-
+from selenium import webdriver
 
 # Create your tests here.
 
@@ -26,10 +26,37 @@ class DjangoTest(unittest.TestCase):
         print(valor[0][0])
         
     def test_3(self):
-        print("Test2: csv")
+        print("Test3: csv")
         from funciones.csvpy import train
         
         
         
 if __name__ == '__main__':
     unittest.main
+    
+class SeleniumTest(unittest.TestCase):
+    
+    def test_2(self):
+        print("Test: login como usuario")
+        browser = webdriver.Chrome()
+        browser.get('localhost:8000')
+        browser.find_element_by_name("username").send_keys("user1")
+        browser.find_element_by_name("password").send_keys("a1s2d3f4")
+        browser.find_element_by_name("loginbtn").click()
+        
+                
+    def test_3(self):
+        print("Test: Crear Usuario")
+        
+        browser = webdriver.Chrome()
+        browser.get('http://localhost:8000/admin/')
+        browser.find_element_by_name("username").send_keys("admin")
+        browser.find_element_by_name("password").send_keys("a1s2d3f4")
+        browser.find_element_by_name("username").send_keys(u'\ue007')
+        browser.get('http://localhost:8000/admin/auth/user/add/')
+        browser.find_element_by_name("username").send_keys('testuser')
+        browser.find_element_by_name("password1").send_keys("a1s2d3f4")
+        browser.find_element_by_name("password2").send_keys("a1s2d3f4")
+        browser.find_element_by_name("_save").click()
+        if __name__ == '__main__':
+            unittest.main
