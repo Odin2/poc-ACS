@@ -18,6 +18,7 @@ def initialize_parameters(tools):
     Paths to save data, logs, etc.
     '''
     root_dir = os.path.dirname(os.path.abspath(__file__)) ## project root directory
+    print(root_dir)
     gt_columns = ['id', 'male'] ## id must be in first column, followed by output variable, then any additional inputs in csv
     image_paths = [root_dir + '/dataset/preprocessed_best/*.png'] 
     gt_paths = {root_dir + '/dataset/train.csv': ','} ## path to ground truth csvs (specify delimiters)
