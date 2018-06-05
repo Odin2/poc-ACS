@@ -5,7 +5,7 @@ from funciones.estimador import Estimador
 import unittest
 import csv
 from selenium import webdriver
-
+from django.contrib.auth.models import User
 # Create your tests here.
 
 class DjangoTest(unittest.TestCase):
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     
 class SeleniumTest(unittest.TestCase):
     
-    def test_2(self):
+    def test_5(self):
         print("Test: login como usuario")
         browser = webdriver.Chrome()
         browser.get('localhost:8000')
@@ -45,7 +45,7 @@ class SeleniumTest(unittest.TestCase):
         browser.find_element_by_name("loginbtn").click()
         
                 
-    def test_3(self):
+    def test_6(self):
         print("Test: Crear Usuario")
         
         browser = webdriver.Chrome()
@@ -60,3 +60,18 @@ class SeleniumTest(unittest.TestCase):
         browser.find_element_by_name("_save").click()
         if __name__ == '__main__':
             unittest.main
+            
+class IntegrationTest(unittest.TestCase):
+    '''
+    def test_7(self):            
+        user=User.objects.create_user('IntegrationUser', password='a1s2d3f4')
+        user.is_superuser=False
+        user.is_staff=False
+        user.save()
+        
+    def test_8(self):            
+        user=User.objects.create_user('IntegrationAdmin', password='a1s2d3f4')
+        user.is_superuser=True
+        user.is_staff=True
+        user.save()
+        '''
