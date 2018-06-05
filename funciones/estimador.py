@@ -6,7 +6,7 @@ import numpy
 import os
 __path__=[os.path.dirname(os.path.abspath(__file__))]
 
-from output_predictions import Predict
+from .output_predictions import Predict
 import numpy as np
 import cv2
 '''

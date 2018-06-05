@@ -11,13 +11,14 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.optimizers import SGD, RMSprop, Adagrad, Adadelta, Adam
 from keras.losses import mean_absolute_error, mean_squared_error
 from keras.applications.vgg16 import VGG16
-from lib.tools import Tools
+from .libr.tools import Tools
 
 def initialize_parameters(tools):
     '''
     Paths to save data, logs, etc.
     '''
     root_dir = os.path.dirname(os.path.abspath(__file__)) ## project root directory
+    print(root_dir)
     gt_columns = ['id', 'male'] ## id must be in first column, followed by output variable, then any additional inputs in csv
     image_paths = [root_dir + '/dataset/preprocessed_best/*.png'] 
     gt_paths = {root_dir + '/dataset/train.csv': ','} ## path to ground truth csvs (specify delimiters)
