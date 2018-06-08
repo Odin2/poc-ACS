@@ -2,6 +2,10 @@ from .estimador import Estimador
 import random
 import numpy as np
 
+"""
+Clase encargada del conjunto de muestras y 
+las diferentes metricas
+"""
 
 
 class Muestra:
@@ -12,20 +16,27 @@ class Muestra:
         self.sub_muestra =[]
         
         # self.estimador = Estimador()
-   
+    """
+    Metodo de calcular metrica MAE
+    """
     def calcular_MAE(self,y1,y2):
         y_1=np.array(y1)
         y_2=np.array(y2)
         mae = (1/len(y1))*sum(np.abs(y_1-y_2))
         return mae
-   
+    """
+    Metodo de calcular metrica MSE
+    """
     def calcular_MSE(self,y1,y2):
         y_1=np.array(y1)
         y_2=np.array(y2)
         mae = (1/len(y1))*sum((y_1-y_2)**2)
         return mae
         return True
-
+    """
+    Metodo de cargar conjunto de prueba
+    Retorna un array con los diferentes aspectos
+    """
     def cargar_muestra(self,muestra,k,cant_img):
         self.sub_muestra=[]
         for i in range(k):
