@@ -32,4 +32,4 @@ def train():
 
     csvarchivo.close()
 
-train()
+#train()
