@@ -1,7 +1,6 @@
 from django.test import TestCase
 import unittest
 from funciones.muestra import Muestra
-
 class DjangoTest(unittest.TestCase):
     def testMuestra(self):
         pba = Muestra()

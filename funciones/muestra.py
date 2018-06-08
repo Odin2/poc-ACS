@@ -49,14 +49,16 @@ class Muestra:
         self.muestra=muestra
         resultado={"sub":self.sub_muestra,"mae":[],"mse":[],"res":[],"mean":[],"std":[],"var":[]}
         
-        
+        x = ""
+        y = 1
         for i in self.sub_muestra:
             estimacion=self.estimador.estimar_muestra(i[0],i[2])
-            resultado.get("res").append(estimacion)
-            resultado.get("mae").append(self.calcular_MAE(estimacion,i[1]))
-            resultado.get("mse").append(self.calcular_MSE(estimacion,i[1]))
-            resultado.get("mean").append(np.mean(estimacion))
-            resultado.get("std").append(np.std(estimacion))
-            resultado.get("var").append(np.var(estimacion))
-        
-        return resultado
+            res = str(estimacion)
+            mae = str(self.calcular_MAE(estimacion,i[1]))
+            mse = str(self.calcular_MSE(estimacion,i[1]))
+            mean = str(np.mean(estimacion))
+            std = str(np.std(estimacion))
+            var = str(np.var(estimacion))
+            x = x + "Resultado particion " + str(y) + ": " + res + "\n" + "Muestra: " + str(self.sub_muestra[y-1][:3]) + "\n" + "MAE: " + mae + "\n" + "MSE: " + mse + "\n" + "Mean: "+ mean +"\n" + "std: " + std + "\n" + "variance: " + var + "\n"
+            y += 1
+        return x
