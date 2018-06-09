@@ -19,7 +19,9 @@ from .libr.parse_images import read_images, train_test_ids, unpickle
 from .libr.tools import Tools
 from .parameters import initialize_parameters
 
-
+"""
+Clase encargada del conjunto de predicciones
+"""
 class Predict:
     def __init__(self):
         self.tool = Tools()
