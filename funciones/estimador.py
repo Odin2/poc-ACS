@@ -20,12 +20,32 @@ class Estimador:
     def __init__(self):
         # The constructor
         self.predecir = None
+    """
+    Método de realizar una estimacion
+    
+    Args:
+        param1: sexo de la muestra.
 
+    Returns:
+        valor en meses de la estimacion
+    """
     def estimar(self, sexo):
         self.predecir = Predict()
         self.predecir.star()
         resultado = self.predecir.predict(sexo)
         return resultado
+    
+    """
+    Método de realizar una estimacion a unos archivos determinados
+    para el cargar conjunto de imagenes
+    
+    Args:
+        param1: subconjunto
+        param2: sexo
+
+    Returns:
+        valor en meses de la estimacion
+    """
     def estimar_muestra(self,sub_muestra,sexo):
         self.predecir = Predict()
         self.predecir.star()
