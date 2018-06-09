@@ -23,7 +23,18 @@ from .parameters import initialize_parameters
 class Predict:
     def __init__(self):
         self.tool = Tools()
-
+    """
+    Metodo de realizar la prediccion 
+    
+    Args:
+        param1: attributes
+        param2: paths completos 
+        param3: tm
+        param4: subset tipos aceptados
+        
+    Returns:
+        Predic del modelo de img
+    """
     def make_predictions(self, attributes, paths, tm, subset=['train', 'val', 'test']):
         os.chdir(paths[0])
         model_attributes = attributes
@@ -70,10 +81,22 @@ class Predict:
             predict_pred = full_model.predict(x_predict)
         del full_model
         return(predict_pred)
-
+    """
+    Metodo de inicializar los parametros 
+    """
     def star(self):
         self.model_attributes, self.training_scope, self.paths, self.datagen, self.tm = initialize_parameters(self.tool)
+    """
+    Metodo de realizar la prediccion en el path determinado
+    /dataset/test/
+    
+    Args:
+        param1: sexo
 
+        
+    Returns:
+        Predic del modelo de img
+    """
     def predict(self, sexo):
         self.paths[2] = [self.paths[0]+'/dataset/test/*.png']
         read_images(self.model_attributes['image_size'], self.model_attributes['train_test_split'],
@@ -90,7 +113,18 @@ class Predict:
             result_male = self.make_predictions(self.model_attributes, self.paths, self.tm, ['predict'])
             K.clear_session()
             return result_male
+    """
+    Metodo de realizar la prediccion en el path determinado de un conj
+    /dataset/test/
     
+    Args:
+        param1: conjunt
+        param2: sex
+
+        
+    Returns:
+        Prediccion
+    """
     def predictMod(self, data,sex):
         result=[]
        
