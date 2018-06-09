@@ -18,6 +18,16 @@ class Muestra:
         # self.estimador = Estimador()
     """
     Metodo de calcular metrica MAE
+    ref: https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d
+
+    Args:
+        param1: prediction.
+        param2: actual prediction.
+
+    Returns:
+        The return value. True for success, False otherwise.
+
+   
     """
     def calcular_MAE(self,y1,y2):
         y_1=np.array(y1)
@@ -26,6 +36,13 @@ class Muestra:
         return mae
     """
     Metodo de calcular metrica MSE
+    ref: https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d
+    Args:
+        param1: prediction.
+        param2: actual prediction.
+
+    Returns:
+        The return value. True for success, False otherwise.
     """
     def calcular_MSE(self,y1,y2):
         y_1=np.array(y1)
@@ -36,6 +53,12 @@ class Muestra:
     """
     Metodo de cargar conjunto de prueba
     Retorna un array con los diferentes aspectos
+    Args:
+        param1: csv
+        param2: cantidad particiones
+        param3: img por particion
+    Returns:
+        String con todos los resultados de MSE, MAE, var, std, mean, etc.
     """
     def cargar_muestra(self,muestra,k,cant_img):
         self.sub_muestra=[]
