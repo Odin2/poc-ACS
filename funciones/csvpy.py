@@ -9,11 +9,11 @@ class datoscsv:
         self.id1 = id1
         self.boneage = boneage
         self.male = male
-
+"""
 # Ejemplo de lectura y manipulacion de datos en un csv.
 #
 #  Imprime todos los datos a la consola de python.
-
+"""
 
 def train():
     lista = []

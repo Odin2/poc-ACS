@@ -8,10 +8,14 @@ import base64
 from funciones.estimador import Estimador
 # Create your views here.
 
-
+"""
 # # Funcion que responde al POST de la pagina de estimar.
-#
+Args:
+        request en el que se reciben la informacion ingresada del formulario
+Returns:
+        HttpResponse con la respuesta de la estimacion        
 #  x representa el numero de la estimacion y se devuelve la imagen para desplegarse en imgsrc.
+"""
 def upload_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)

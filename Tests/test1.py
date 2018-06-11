@@ -1,6 +1,9 @@
 from django.test import TestCase
 import unittest
 from funciones.muestra import Muestra
+"""
+Prueba unitario del modulo de Muestra
+"""
 class DjangoTest(unittest.TestCase):
     def testMuestra(self):
         pba = Muestra()

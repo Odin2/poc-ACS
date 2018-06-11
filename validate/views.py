@@ -5,6 +5,16 @@ from funciones.muestra import Muestra
 from funciones.csvpy import datoscsv
 import csv
 import io
+
+"""
+    Metodo que maneja la respuesta al usuario de la validacion
+    
+    Args:
+        request en el que se reciben la informacion ingresada del formulario
+        
+    Returns:
+        HttpResponse con la respuesta de la validacion
+"""
 def index(request):
     form = validate.forms.ValidateForm()
     if request.method == 'POST':
